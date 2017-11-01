@@ -1,7 +1,12 @@
+# -*-coding:utf8-*-
+
 """
+Description：
+利用csv库Reader查看csv文件数据
 
 拓展：  
-open()函数：https://docs.python.org/2/library/functions.html#open
+①：csv库：https://docs.python.org/2/library/csv.html
+②：open()函数：https://docs.python.org/2/library/functions.html#open
 """
 
 import csv
