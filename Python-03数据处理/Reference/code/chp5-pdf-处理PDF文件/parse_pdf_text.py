@@ -1,5 +1,14 @@
 #-*-coding:utf-8_-*-
 
+"""
+Description:
+文本清洗
+
+拓展：
+
+
+"""
+
 pdf_txt = '../../data/chp5/en-final-table9.txt'
 openfile = open(pdf_txt, 'r')
 country_line = total_line = False
