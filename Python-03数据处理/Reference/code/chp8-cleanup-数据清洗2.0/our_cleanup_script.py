@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Usage: python our_cleanup_script.py
 
@@ -32,7 +34,7 @@ import dataset
 
 def get_rows(file_name):
     """Return a list of rows from a given csv filename."""
-    rdr = reader(open(file_name, 'rb'))
+    rdr = reader(open(file_name.decode('utf8'), 'rb'))
     return [row for row in rdr]
 
 
@@ -170,8 +172,8 @@ def main():
 
     #TODO: we probably should abstract these files so that we can pass
     # them in as variables and use the main function with other surveys
-    data_rows = get_rows('data/unicef/mn.csv')
-    header_rows = get_rows('data/unicef/mn_updated_headers.csv')
+    data_rows = get_rows('E:\Pycharm Workingspace\PythonBook\Python-03数据处理\Reference\data\unicef\mn.csv')
+    header_rows = get_rows('E:\Pycharm Workingspace\PythonBook\Python-03数据处理\Reference\data\unicef\mn_headers_updated.csv')
     skip_index, final_header_rows = eliminate_mismatches(header_rows,
                                                          data_rows)
     zipped_data = create_zipped_data(final_header_rows, data_rows, skip_index)
@@ -180,7 +182,7 @@ def main():
     if num_missing == 0 and num_dupes == 0:
         #TODO: we probably also want to abstract this
         # file away, or make sure it exists before continuing
-        save_to_sqlite('sqlite:///data_wrangling.db', zipped_data, 'mn')
+        save_to_sqlitedb('sqlite:///C:\sqlite\data_wrangling.db', zipped_data, 'mn')
     else:
         #TODO: eventually we probably want to log this, and
         # maybe send an email if an error is thrown rather than print it
