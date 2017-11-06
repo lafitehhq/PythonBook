@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Usage: python our_cleanup_script.py
+Usage: python our_cleanup_script_数据清洗标准化.py
 
 This script is used to intake the male survey data from UNICEF
 and save it to a simple database file after it has been checked
