@@ -7,7 +7,7 @@ import json
 import numpy
 
 
-DATA_FOLDER = '../../data/chp9/'
+DATA_FOLDER = '..\..\data/chp9/'
 
 
 workbook = xlrd.open_workbook(DATA_FOLDER + 'unicef_oct_2014.xls')

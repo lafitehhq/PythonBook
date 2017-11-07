@@ -21,12 +21,12 @@ def get_country(country_row):  # 创建函数：接受国家作为参数，返�
     return country_dict.get(country_row['Country / Territory'].lower())
 
 cpi_and_cl = cpi_and_cl.compute([('continent',  # 使用get_country 函数创建一个新的列，continent。沿用相同的表名称
-                                  agate.Formula(text_type, get_country)), ])
-print cpi_and_cl.column_names
+#                                   agate.Formula(text_type, get_country)), ])
+# print cpi_and_cl.column_names
 
-# for r in cpi_and_cl.rows:
-#     print r['Country / Territory'], r['continent']
-#
+for r in cpi_and_cl.rows:  # 有了大洲和国家数据。做一个快速的检查来确保没有遗漏任何东西
+    print r['Country / Territory'], r['continent']
+
 # no_continent = cpi_and_cl.where(lambda x: x['continent'] is None)
 # for r in no_continent.rows:
 #     print r['Country / Territory']
